@@ -12,17 +12,17 @@ Semantic Memory: The system uses a ChromaDB vector database to remember and unde
 
 End-to-End Automation: A digital assembly line of AI agents handles everything:
 
-## Topic Discovery
+1.Topic Discovery
 
-1.Scriptwriting & Visual Prompting
+2.Scriptwriting & Visual Prompting
 
-2.Voiceover Generation (TTS)
+3.Voiceover Generation (TTS)
 
-3.Image Sourcing
+4.Image Sourcing
 
-4.Video Assembly, Merging & Subtitling
+5.Video Assembly, Merging & Subtitling
 
-5.AI-Powered Scripting: Uses Google's Gemini models to write captivating, curiosity-driven scripts in a consistent style, optimized for short-form video.
+6.AI-Powered Scripting: Uses Google's Gemini models to write captivating, curiosity-driven scripts in a consistent style, optimized for short-form video.
 
 ## How It Works ⚙️
 The studio operates on a multi-agent architecture orchestrated by a framework like LangGraph. Each agent performs a specific task and passes its work to the next agent in the production line:
