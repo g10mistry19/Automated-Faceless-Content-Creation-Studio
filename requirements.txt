@@ -1,0 +1,20 @@
+# Core video and content generation libraries from your original project
+moviepy
+gtts
+google-api-python-client
+google-generativeai
+Pillow
+python-dotenv
+streamlit
+
+# New libraries for agent orchestration and workflow management
+langchain
+langgraph
+langchain-google-genai
+
+# New libraries for the Topic Scout Agent's trend analysis tools
+pytrends # For Google Trends
+praw     # For Reddit
+youtube-search-python # For searching YouTube
+beautifulsoup4 # For web scraping
+requests
