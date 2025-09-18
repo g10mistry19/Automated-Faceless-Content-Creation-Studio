@@ -1,0 +1,49 @@
+==================================================
+Topic: The Lost City of Atlantis
+Generated On: 2025-09-17 11:52:22
+--------------------------------------------------
+
+--- Image Queries ---
+pexels:
+  - underwater ancient city vertical
+  - atlantis ruins portrait
+  - scuba diver discovery portrait
+  - lost civilization deep sea vertical
+
+pixabay:
+  - sunken city mystery vertical
+  - ancient underwater architecture portrait
+  - explorer atlantis ruins vertical
+  - mythical lost city portrait
+
+unsplash:
+  - cinematic underwater ruins portrait
+  - atlantis crystal structures vertical
+  - diver finding ancient city portrait
+  - enigmatic submerged city vertical
+
+--- Image Prompts (AI) ---
+huggingface_sdxl:
+  - A breathtaking, hyperrealistic portrait view of the legendary city of Atlantis, submerged deep beneath a vibrant turquoise ocean. Colossal, art deco-inspired crystal spires and buildings glow with an inner light, casting an ethereal glow on the surrounding marine life. Light rays from the surface pierce the water, creating dramatic volumetric lighting and a sense of ancient wonder. Intricate details on weathered stone and advanced, futuristic structures. Cinematic, 8K, high detail, photorealistic, vertical aspect ratio.
+  - An adventurous deep-sea explorer in advanced diving gear, illuminated by a powerful beam, discovers a massive, moss-covered archway of an Atlantean ruin. Ancient, alien-like symbols are faintly etched into the weathered stone. The surrounding water is a mysterious, dark blue, with hints of more sprawling, forgotten structures disappearing into the distance. Dramatic lighting, sense of awe and discovery, cinematic, high detail, realistic, portrait orientation.
+
+--- Video Queries ---
+pexels:
+  - underwater ruins short vertical
+  - atlantis exploration vertical video
+  - diver discovering ancient city short
+  - mystery ocean deep vertical
+
+pixabay:
+  - sunken city cinematic vertical
+  - atlantis myth short video portrait
+  - underwater structures vertical clip
+  - lost civilization short film portrait
+
+--- Video Prompts (AI) ---
+huggingface_zeroscope:
+  - A slow, mesmerizing vertical camera pan revealing a majestic, ancient Atlantean city emerging from the deep ocean floor. Luminescent, advanced crystal architecture glows softly amidst schools of exotic, bioluminescent fish. Ethereal, cinematic, volumetric lighting, seamless loop, vertical aspect ratio, 3-4 seconds.
+  - First-person perspective of a diver's powerful flashlight beam sweeping across the intricate, moss-covered face of a colossal Atlantean statue. Bubbles gently rise past the lens. The camera then slightly pulls back to show the vastness of the mysterious, silent underwater ruins, hinting at an endless lost city. Cinematic, moody, discovery, short loop, vertical aspect ratio, 3-4 seconds.
+
+==================================================
+

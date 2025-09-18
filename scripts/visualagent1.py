@@ -113,8 +113,6 @@ def generate_ai_images_with_hf(topic: str, prompts: list, output_dir: str):
             
     return image_paths
 
-# --- Agent Tool 2: Pexels Video (Corrected) ---
-
 # --- Agent Tool 2: Pexels Video (Corrected with Direct API Call) ---
 import requests
 
