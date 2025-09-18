@@ -165,12 +165,64 @@ def fetch_pixabay_videos(queries: list, output_dir: str):
     return paths
 
 # --- AI Video Tools ---
-def generate_hf_zeroscope_videos(prompts: list, output_dir: str):
-    # This is a placeholder as Zeroscope API often requires async polling.
-    # For now, we simulate the process. A full implementation would be more complex.
-    print("⚠️ [HF Zeroscope] AI video generation is a complex process. This is a placeholder.")
-    return ["path/to/placeholder_video.mp4"] * len(prompts)
+# def generate_hf_zeroscope_videos(prompts: list, output_dir: str):
+#     # This is a placeholder as Zeroscope API often requires async polling.
+#     # For now, we simulate the process. A full implementation would be more complex.
+#     print("⚠️ [HF Zeroscope] AI video generation is a complex process. This is a placeholder.")
+#     return ["path/to/placeholder_video.mp4"] * len(prompts)
+# --- AI Video Tools ---
+# import requests
+# import time
 
+def generate_hf_zeroscope_videos(prompts: list, output_dir: str):
+    """
+    Generates AI video clips for each prompt using the Hugging Face Zeroscope model.
+    This function implements a polling mechanism to handle the asynchronous API.
+    """
+    print(f"📹 Generating {len(prompts)} AI video clips using Hugging Face Zeroscope...")
+    api_token = os.getenv("HF_API_TOKEN")
+    if not api_token:
+        print("❌ Hugging Face API token not found in .env file.")
+        return [None] * len(prompts)
+
+    model_url = "https://api-inference.huggingface.co/models/cerspense/zeroscope_v2_576w"
+    headers = {"Authorization": f"Bearer {api_token}"}
+    paths = []
+    
+    for i, prompt in enumerate(prompts):
+        file_path = os.path.join(output_dir, f"hf_zeroscope_video_{i+1}.mp4")
+        
+        try:
+            # Step 1: Start the generation job. This request is instant.
+            payload = {"inputs": prompt}
+            response = requests.post(model_url, headers=headers, json=payload)
+
+            # If the model is loading, wait and retry once.
+            if response.status_code == 503:
+                estimated_time = response.json().get("estimated_time", 20.0)
+                print(f"⏳ Model is loading, waiting {estimated_time} seconds to retry...")
+                time.sleep(estimated_time)
+                response = requests.post(model_url, headers=headers, json=payload)
+            
+            response.raise_for_status()
+
+            # The response is NOT the video. It's the raw binary data of the video file.
+            video_data = response.content
+
+            # Step 2: Save the video file
+            with open(file_path, "wb") as f:
+                f.write(video_data)
+            
+            paths.append(file_path)
+            print(f"✅ [HF Zeroscope] Saved AI-generated video: {file_path}")
+
+        except requests.exceptions.RequestException as e:
+            print(f"❌ [HF Zeroscope] Failed to generate video for prompt '{prompt}': {e}")
+            if e.response:
+                print(f"   Response Body: {e.response.text}")
+            paths.append(None)
+            
+    return paths
 
 # --- Main Agent Node ---
 
