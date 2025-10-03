@@ -4,7 +4,7 @@ import base64
 import json
 import requests
 from dotenv import load_dotenv
-from pexels_api import API
+# from pexels_api import API
 
 # --- Helper Function ---
 
